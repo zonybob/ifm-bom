@@ -12,15 +12,19 @@ In &lt;properties&gt; define the version of the BOM to import.
 		<ifm.bom.version>0.2-SNAPSHOT</ifm.bom.version>
 ```
 
-Add the following to &lt;dependencies&gt;
+After &lt;properties&gt; add the dependency management section 
 ```
-		<dependency>
-			<groupId>mil.nasic.catalog</groupId>
-			<artifactId>bom</artifactId>
-			<version>${ifm.bom.version}</version>
-			<type>pom</type>
-			<scope>import</scope>
-		</dependency>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>mil.nasic.catalog</groupId>
+				<artifactId>bom</artifactId>
+				<version>${ifm.bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 ```
 
 Now for all your other dependencies, remove the version, and let the BOM aide us in dependency convergence:
@@ -32,6 +36,3 @@ Now for all your other dependencies, remove the version, and let the BOM aide us
 		</dependency>
 ```
 
-
-## Problems
-Eclipse interprets no version in dependencies as an error in your pom.  There does not appear to be a way to disable this error.  
