@@ -90,7 +90,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.sndyuk</groupId>
-				<artifactId>logback-more-appenders</artifactId>
+				<artifactId>logback-more-appenders-ifm</artifactId>
 				<version>${logback.more.version}</version>
 			</dependency>
 			<dependency>
