@@ -94,17 +94,6 @@
 				<version>${logback.more.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>${servlet.api.version}</version>
-				<scope>compile</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.fluentd</groupId>
-				<artifactId>fluent-logger</artifactId>
-				<version>${fluentd.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>org.apache.kafka</groupId>
 				<artifactId>kafka-clients</artifactId>
 				<version>${kafka.version}</version>
