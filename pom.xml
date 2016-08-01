@@ -9,7 +9,9 @@
 	<description>dependency management for IFM</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jackson.version>2.5.4</jackson.version>
+		<!-- <jackson.version>2.5.4</jackson.version> -->
+		<jackson.version>2.6.1</jackson.version>
+		<!-- <jackson.version>2.8.1</jackson.version> -->
 		<geo-json.version>1.6</geo-json.version>
 		<slf4j.version>1.7.6</slf4j.version>
 		<junit.version>4.11</junit.version>
@@ -36,6 +38,12 @@
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
 				<version>${jackson.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-annotations</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
@@ -43,10 +51,16 @@
 				<version>${jackson.version}</version>
 			</dependency>
 			<dependency>
+				<!-- use java.time instead -->
 				<groupId>com.fasterxml.jackson.datatype</groupId>
-				<artifactId>jackson-datatype-joda</artifactId>
-				<version>${jackson.version}</version>
+				<artifactId>jackson-datatype-jsr310</artifactId>
+				<version>2.6.1</version>
 			</dependency>
+			<!-- **DIE JODA TIME DIE** <dependency> <groupId>com.fasterxml.jackson.datatype</groupId> 
+				<artifactId>jackson-datatype-joda</artifactId> <version>${jackson.version}</version> 
+				<exclusions> <exclusion> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-annotations</artifactId> 
+				</exclusion> </exclusions> </dependency> <dependency> <groupId>joda-time</groupId> 
+				<artifactId>joda-time</artifactId> <version>2.8.1</version> </dependency> -->
 			<dependency>
 				<groupId>de.grundid.opendatalab</groupId>
 				<artifactId>geojson-jackson</artifactId>
@@ -115,6 +129,7 @@
 				<artifactId>jts</artifactId>
 				<version>${vivid.jts.version}</version>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 </project>
